@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      setIsScrolled(scrollPosition > 50)
-    }
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleRegisterClick = () => {
-    const event = new CustomEvent("openRegistrationModal")
-    window.dispatchEvent(event)
-  }
+    const event = new CustomEvent("openRegistrationModal");
+    window.dispatchEvent(event);
+  };
 
   return (
     <motion.nav
@@ -44,10 +44,21 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.8, ease: "easeInOut" }}>
-              <Image src="/logo-careviza.png" alt="CareViza Logo" width={36} height={36} className="h-9 w-9" />
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+            >
+              <Image
+                src="/logo-careviza.png"
+                alt="CareViza Logo"
+                width={36}
+                height={36}
+                className="h-9 w-9"
+              />
             </motion.div>
-            <span className="ml-3 text-xl lg:text-2xl font-bold text-blue-600 tracking-tight">CareViza</span>
+            <span className="ml-3 text-xl lg:text-2xl font-bold text-blue-600 tracking-tight">
+              CareViza
+            </span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -56,7 +67,7 @@ export default function Header() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/services", label: "Services" },
-                { href: "/jobs", label: "Jobs" },
+                // { href: "/jobs", label: "Jobs" },
                 { href: "/blogs", label: "Blogs" },
                 { href: "/about", label: "About" },
                 { href: "/contact", label: "Contact" },
@@ -84,7 +95,11 @@ export default function Header() {
           </div>
 
           <div className="hidden md:block">
-            <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.2 }}>
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
               <Button
                 onClick={handleRegisterClick}
                 className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-2xl transition-all duration-300 px-6 py-2 rounded-full font-semibold border-2 border-transparent hover:border-blue-200"
@@ -103,7 +118,10 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="hover:bg-blue-50 transition-colors duration-200"
               >
-                <motion.div animate={{ rotate: mobileMenuOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                <motion.div
+                  animate={{ rotate: mobileMenuOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
                   {mobileMenuOpen ? (
                     <X className="h-6 w-6 text-blue-600" />
                   ) : (
@@ -158,8 +176,8 @@ export default function Header() {
               >
                 <Button
                   onClick={() => {
-                    handleRegisterClick()
-                    setMobileMenuOpen(false)
+                    handleRegisterClick();
+                    setMobileMenuOpen(false);
                   }}
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 py-3 rounded-full font-semibold"
                 >
@@ -171,5 +189,5 @@ export default function Header() {
         )}
       </AnimatePresence>
     </motion.nav>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { motion } from "framer-motion"
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
@@ -20,11 +20,18 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <div className="flex items-center mb-4">
-              <Image src="/logo-careviza-light.png" alt="CareViza Logo" width={32} height={32} className="h-8 w-8" />
+              <Image
+                src="/logo-careviza-light.png"
+                alt="CareViza Logo"
+                width={32}
+                height={32}
+                className="h-8 w-8"
+              />
               <span className="ml-2 text-xl font-bold">CareViza</span>
             </div>
             <p className="text-gray-400 mb-4">
-              Connecting exceptional nurses with outstanding healthcare opportunities.
+              Connecting exceptional nurses with outstanding healthcare
+              opportunities.
             </p>
           </motion.div>
           <motion.div
@@ -35,22 +42,34 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link
+                  href="/services"
+                  className="hover:text-white transition-colors"
+                >
                   Permanent Placement
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link
+                  href="/services"
+                  className="hover:text-white transition-colors"
+                >
                   Temporary Staffing
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link
+                  href="/services"
+                  className="hover:text-white transition-colors"
+                >
                   Career Development
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link
+                  href="/services"
+                  className="hover:text-white transition-colors"
+                >
                   License Support
                 </Link>
               </li>
@@ -64,22 +83,34 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Resources</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/blogs" className="hover:text-white transition-colors">
+                <Link
+                  href="/blogs"
+                  className="hover:text-white transition-colors"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/blogs" className="hover:text-white transition-colors">
+                <Link
+                  href="/blogs"
+                  className="hover:text-white transition-colors"
+                >
                   Career Tips
                 </Link>
               </li>
               <li>
-                <Link href="/blogs" className="hover:text-white transition-colors">
+                <Link
+                  href="/blogs"
+                  className="hover:text-white transition-colors"
+                >
                   Salary Guide
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link
+                  href="/contact"
+                  className="hover:text-white transition-colors"
+                >
                   FAQ
                 </Link>
               </li>
@@ -93,22 +124,34 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link
+                  href="/about"
+                  className="hover:text-white transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link
+                  href="/contact"
+                  className="hover:text-white transition-colors"
+                >
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link
+                  href="/contact"
+                  className="hover:text-white transition-colors"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link
+                  href="/contact"
+                  className="hover:text-white transition-colors"
+                >
                   Terms of Service
                 </Link>
               </li>
@@ -121,9 +164,9 @@ export default function Footer() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
         >
-          <p>&copy; 2024 CareViza. All rights reserved.</p>
+          <p>&copy; 2025 CareViza. All rights reserved.</p>
         </motion.div>
       </div>
     </motion.footer>
-  )
+  );
 }

@@ -1,26 +1,33 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import type React from "react";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { addRegistrationData } from "@/app/firestore/firestore";
 
 interface FormData {
-  name: string
-  phoneNumber: string
-  email: string
-  educationQualification: string
-  experience: number | string
-  department: string
-  expectedSalary: string
+  name: string;
+  phoneNumber: string;
+  email: string;
+  educationQualification: string;
+  experience: number | string;
+  department: string;
+  expectedSalary: string;
 }
 
 export default function RegistrationModal() {
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phoneNumber: "",
@@ -29,46 +36,73 @@ export default function RegistrationModal() {
     experience: "",
     department: "",
     expectedSalary: "",
-  })
+  });
 
   useEffect(() => {
     const handleOpenModal = () => {
-      setShowModal(true)
-    }
+      setShowModal(true);
+    };
 
-    window.addEventListener("openRegistrationModal", handleOpenModal)
+    window.addEventListener("openRegistrationModal", handleOpenModal);
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      const scrollPercent = (scrollPosition / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+      const scrollPosition = window.scrollY;
+      const scrollPercent =
+        (scrollPosition /
+          (document.documentElement.scrollHeight - window.innerHeight)) *
+        100;
 
-      if (scrollPercent > 30 && !localStorage.getItem("modalShown") && window.location.pathname === "/") {
-        setShowModal(true)
-        localStorage.setItem("modalShown", "true")
+      if (
+        scrollPercent > 30 &&
+        !localStorage.getItem("modalShown") &&
+        window.location.pathname === "/"
+      ) {
+        setShowModal(true);
+        localStorage.setItem("modalShown", "true");
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("openRegistrationModal", handleOpenModal)
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      window.removeEventListener("openRegistrationModal", handleOpenModal);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleClose = () => {
-    setShowModal(false)
-  }
+    setShowModal(false);
+  };
 
   const handleInputChange = (field: keyof FormData, value: string | number) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Registration Data:", formData)
-    handleClose()
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Registration Data:", formData);
+
+    try {
+      // Map form data to expected firebase fields, if needed
+
+      await addRegistrationData({
+        department: formData.department,
+        email: formData.email,
+        exp_salary: formData.expectedSalary,
+        experience: formData.experience,
+        mobile: formData.phoneNumber,
+        name: formData.name,
+        qualification: formData.educationQualification,
+        status: false,
+      });
+
+      handleClose();
+    } catch (error) {
+      alert("Failed, please try contacting us directly or try again");
+      console.error("Failed to submit:", error);
+      // Handle error display if desired
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -115,8 +149,15 @@ export default function RegistrationModal() {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
-                <Label htmlFor="name" className="text-gray-700 font-medium text-sm">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <Label
+                  htmlFor="name"
+                  className="text-gray-700 font-medium text-sm"
+                >
                   Name
                 </Label>
                 <Input
@@ -130,8 +171,15 @@ export default function RegistrationModal() {
                 />
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
-                <Label htmlFor="phoneNumber" className="text-gray-700 font-medium text-sm">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Label
+                  htmlFor="phoneNumber"
+                  className="text-gray-700 font-medium text-sm"
+                >
                   Phone Number
                 </Label>
                 <Input
@@ -141,12 +189,21 @@ export default function RegistrationModal() {
                   required
                   className="mt-1"
                   value={formData.phoneNumber}
-                  onChange={(e) => handleInputChange("phoneNumber", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("phoneNumber", e.target.value)
+                  }
                 />
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 }}>
-                <Label htmlFor="email" className="text-gray-700 font-medium text-sm">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <Label
+                  htmlFor="email"
+                  className="text-gray-700 font-medium text-sm"
+                >
                   Email
                 </Label>
                 <Input
@@ -160,11 +217,22 @@ export default function RegistrationModal() {
                 />
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}>
-                <Label htmlFor="educationQualification" className="text-gray-700 font-medium text-sm">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7 }}
+              >
+                <Label
+                  htmlFor="educationQualification"
+                  className="text-gray-700 font-medium text-sm"
+                >
                   Education Qualification
                 </Label>
-                <Select onValueChange={(value) => handleInputChange("educationQualification", value)}>
+                <Select
+                  onValueChange={(value) =>
+                    handleInputChange("educationQualification", value)
+                  }
+                >
                   <SelectTrigger className="mt-1">
                     <SelectValue placeholder="Select your qualification" />
                   </SelectTrigger>
@@ -178,8 +246,15 @@ export default function RegistrationModal() {
                 </Select>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }}>
-                <Label htmlFor="experience" className="text-gray-700 font-medium text-sm">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8 }}
+              >
+                <Label
+                  htmlFor="experience"
+                  className="text-gray-700 font-medium text-sm"
+                >
                   Experience (How many years)
                 </Label>
                 <Input
@@ -191,15 +266,31 @@ export default function RegistrationModal() {
                   required
                   className="mt-1"
                   value={formData.experience}
-                  onChange={(e) => handleInputChange("experience", Number.parseInt(e.target.value) || 0)}
+                  onChange={(e) =>
+                    handleInputChange(
+                      "experience",
+                      Number.parseInt(e.target.value) || 0,
+                    )
+                  }
                 />
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }}>
-                <Label htmlFor="department" className="text-gray-700 font-medium text-sm">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.9 }}
+              >
+                <Label
+                  htmlFor="department"
+                  className="text-gray-700 font-medium text-sm"
+                >
                   Which Department
                 </Label>
-                <Select onValueChange={(value) => handleInputChange("department", value)}>
+                <Select
+                  onValueChange={(value) =>
+                    handleInputChange("department", value)
+                  }
+                >
                   <SelectTrigger className="mt-1">
                     <SelectValue placeholder="Select department" />
                   </SelectTrigger>
@@ -218,8 +309,15 @@ export default function RegistrationModal() {
                 </Select>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.0 }}>
-                <Label htmlFor="expectedSalary" className="text-gray-700 font-medium text-sm">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.0 }}
+              >
+                <Label
+                  htmlFor="expectedSalary"
+                  className="text-gray-700 font-medium text-sm"
+                >
                   Expected Salary
                 </Label>
                 <Input
@@ -229,11 +327,17 @@ export default function RegistrationModal() {
                   required
                   className="mt-1"
                   value={formData.expectedSalary}
-                  onChange={(e) => handleInputChange("expectedSalary", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("expectedSalary", e.target.value)
+                  }
                 />
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1 }}
+              >
                 <Button
                   type="submit"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
@@ -246,5 +350,5 @@ export default function RegistrationModal() {
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

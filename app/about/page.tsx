@@ -1,13 +1,21 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Heart, Users, Award, Target, CheckCircle, TrendingUp, Shield } from "lucide-react"
-import Image from "next/image"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import WhatsAppWidget from "@/components/whatsapp-widget"
-import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Heart,
+  Users,
+  Award,
+  Target,
+  CheckCircle,
+  TrendingUp,
+  Shield,
+} from "lucide-react";
+import Image from "next/image";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import WhatsAppWidget from "@/components/whatsapp-widget";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
   const stats = [
@@ -15,7 +23,7 @@ export default function AboutPage() {
     { number: "200+", label: "Healthcare Partners", icon: Heart },
     { number: "98%", label: "Success Rate", icon: TrendingUp },
     { number: "15+", label: "Years Experience", icon: Award },
-  ]
+  ];
 
   const values = [
     {
@@ -27,7 +35,8 @@ export default function AboutPage() {
     {
       icon: Shield,
       title: "Trust & Integrity",
-      description: "Building lasting relationships through honest communication and transparent processes.",
+      description:
+        "Building lasting relationships through honest communication and transparent processes.",
     },
     {
       icon: Target,
@@ -41,7 +50,7 @@ export default function AboutPage() {
       description:
         "Working collaboratively with nurses and healthcare facilities to create mutually beneficial relationships.",
     },
-  ]
+  ];
 
   const team = [
     {
@@ -65,7 +74,7 @@ export default function AboutPage() {
         "https://images.unsplash.com/photo-1603807008857-ad66b70431aa?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       bio: "Healthcare administration expert focused on building strong partnerships.",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -76,17 +85,28 @@ export default function AboutPage() {
       <section className="pt-16 bg-gradient-to-br from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                About <span className="text-blue-600">NurseConnect</span>
+                About <span className="text-blue-600">CareViza</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                For over 15 years, we've been dedicated to connecting exceptional nurses with outstanding healthcare
-                opportunities. Our mission is to bridge the gap between talented nursing professionals and the
-                facilities that need them most.
+                For over 15 years, we've been dedicated to connecting
+                exceptional nurses with outstanding healthcare opportunities.
+                Our mission is to bridge the gap between talented nursing
+                professionals and the facilities that need them most.
               </p>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
+                >
                   Join Our Network
                 </Button>
               </motion.div>
@@ -118,9 +138,12 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Impact</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Impact
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Numbers that reflect our commitment to excellence in nursing recruitment
+              Numbers that reflect our commitment to excellence in nursing
+              recruitment
             </p>
           </motion.div>
 
@@ -138,8 +161,12 @@ export default function AboutPage() {
                     <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                       <stat.icon className="h-8 w-8 text-blue-600" />
                     </div>
-                    <div className="text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
-                    <div className="text-gray-600 font-medium">{stat.label}</div>
+                    <div className="text-4xl font-bold text-blue-600 mb-2">
+                      {stat.number}
+                    </div>
+                    <div className="text-gray-600 font-medium">
+                      {stat.label}
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -157,11 +184,14 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Our Mission
+              </h2>
               <p className="text-lg text-gray-600 mb-6">
-                To empower nursing professionals by connecting them with meaningful career opportunities that align with
-                their skills, values, and aspirations while supporting healthcare facilities in building exceptional
-                care teams.
+                To empower nursing professionals by connecting them with
+                meaningful career opportunities that align with their skills,
+                values, and aspirations while supporting healthcare facilities
+                in building exceptional care teams.
               </p>
               <ul className="space-y-3">
                 {[
@@ -219,14 +249,19 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="order-1 lg:order-2"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Vision</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Our Vision
+              </h2>
               <p className="text-lg text-gray-600 mb-6">
-                To be the leading nursing recruitment agency that transforms healthcare by ensuring every nurse finds
-                their ideal career path and every healthcare facility has access to exceptional nursing talent.
+                To be the leading nursing recruitment agency that transforms
+                healthcare by ensuring every nurse finds their ideal career path
+                and every healthcare facility has access to exceptional nursing
+                talent.
               </p>
               <p className="text-lg text-gray-600">
-                We envision a future where nursing professionals are empowered, valued, and positioned to make their
-                greatest impact on patient care and healthcare outcomes.
+                We envision a future where nursing professionals are empowered,
+                valued, and positioned to make their greatest impact on patient
+                care and healthcare outcomes.
               </p>
             </motion.div>
           </div>
@@ -242,8 +277,12 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">The principles that guide everything we do</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Values
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              The principles that guide everything we do
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -260,8 +299,12 @@ export default function AboutPage() {
                     <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                       <value.icon className="h-8 w-8 text-blue-600" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">{value.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                      {value.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {value.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -279,7 +322,9 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Meet Our Team
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Healthcare professionals dedicated to your success
             </p>
@@ -304,8 +349,12 @@ export default function AboutPage() {
                         className="rounded-full object-cover"
                       />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                    <p className="text-blue-600 font-medium mb-4">{member.role}</p>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {member.name}
+                    </h3>
+                    <p className="text-blue-600 font-medium mb-4">
+                      {member.role}
+                    </p>
                     <p className="text-gray-600">{member.bio}</p>
                   </CardContent>
                 </Card>
@@ -318,18 +367,34 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-20 bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Take the Next Step?</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Take the Next Step?
+            </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Join thousands of nurses who have found their perfect career match with NurseConnect.
+              Join thousands of nurses who have found their perfect career match
+              with CareViza.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  size="lg"
+                  className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3"
+                >
                   Start Your Journey
                 </Button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button
                   size="lg"
                   variant="outline"
@@ -345,5 +410,5 @@ export default function AboutPage() {
 
       <Footer />
     </div>
-  )
+  );
 }

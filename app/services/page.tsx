@@ -1,13 +1,21 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Users, Award, Clock, Stethoscope, Shield, TrendingUp, CheckCircle } from "lucide-react"
-import Image from "next/image"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import WhatsAppWidget from "@/components/whatsapp-widget"
-import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Users,
+  Award,
+  Clock,
+  Stethoscope,
+  Shield,
+  TrendingUp,
+  CheckCircle,
+} from "lucide-react";
+import Image from "next/image";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import WhatsAppWidget from "@/components/whatsapp-widget";
+import { motion } from "framer-motion";
 
 export default function ServicesPage() {
   return (
@@ -28,8 +36,9 @@ export default function ServicesPage() {
               Our <span className="text-blue-600">Services</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive nursing recruitment solutions designed to connect exceptional healthcare professionals with
-              outstanding opportunities.
+              Comprehensive nursing recruitment solutions designed to connect
+              exceptional healthcare professionals with outstanding
+              opportunities.
             </p>
           </motion.div>
         </div>
@@ -57,11 +66,14 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Permanent Placement Services</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Permanent Placement Services
+              </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Our permanent placement service connects qualified nurses with long-term career opportunities at leading
-                healthcare facilities. We focus on finding the perfect match between your skills, preferences, and
-                career goals.
+                Our permanent placement service connects qualified nurses with
+                long-term career opportunities at leading healthcare facilities.
+                We focus on finding the perfect match between your skills,
+                preferences, and career goals.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
@@ -83,7 +95,10 @@ export default function ServicesPage() {
                   </motion.li>
                 ))}
               </ul>
+              {/*
+
               <Button className="bg-blue-600 hover:bg-blue-700 text-white">Learn More</Button>
+                */}
             </motion.div>
           </div>
 
@@ -94,10 +109,14 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               className="order-2 lg:order-1"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Temporary & Contract Staffing</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Temporary & Contract Staffing
+              </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Flexible staffing solutions that adapt to your lifestyle and career preferences. Whether you're looking
-                for short-term assignments or travel nursing opportunities, we have options that work for you.
+                Flexible staffing solutions that adapt to your lifestyle and
+                career preferences. Whether you're looking for short-term
+                assignments or travel nursing opportunities, we have options
+                that work for you.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
@@ -119,7 +138,11 @@ export default function ServicesPage() {
                   </motion.li>
                 ))}
               </ul>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">Explore Opportunities</Button>
+              {/*
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                Explore Opportunities
+              </Button>
+              */}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -148,9 +171,12 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Our Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Our Services
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We go beyond traditional recruitment to provide comprehensive career support
+              We go beyond traditional recruitment to provide comprehensive
+              career support
             </p>
           </motion.div>
 
@@ -165,27 +191,32 @@ export default function ServicesPage() {
               {
                 icon: Clock,
                 title: "Fast Placement",
-                description: "Streamlined process gets you connected with opportunities quickly and efficiently.",
+                description:
+                  "Streamlined process gets you connected with opportunities quickly and efficiently.",
               },
               {
                 icon: Award,
                 title: "Quality Assurance",
-                description: "All our partner facilities are thoroughly vetted for quality and professional standards.",
+                description:
+                  "All our partner facilities are thoroughly vetted for quality and professional standards.",
               },
               {
                 icon: Stethoscope,
                 title: "Specialty Focus",
-                description: "Specialized recruiters for ICU, ER, OR, Pediatrics, and other nursing specialties.",
+                description:
+                  "Specialized recruiters for ICU, ER, OR, Pediatrics, and other nursing specialties.",
               },
               {
                 icon: Shield,
                 title: "License Support",
-                description: "Complete assistance with license transfers, renewals, and regulatory compliance.",
+                description:
+                  "Complete assistance with license transfers, renewals, and regulatory compliance.",
               },
               {
                 icon: TrendingUp,
                 title: "Career Growth",
-                description: "Ongoing career development and advancement opportunities with our partners.",
+                description:
+                  "Ongoing career development and advancement opportunities with our partners.",
               },
             ].map((feature, index) => (
               <motion.div
@@ -200,7 +231,9 @@ export default function ServicesPage() {
                     <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                       <feature.icon className="h-8 w-8 text-blue-600" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                      {feature.title}
+                    </h3>
                     <p className="text-gray-600">{feature.description}</p>
                   </CardContent>
                 </Card>
@@ -213,25 +246,47 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-20 bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Advance Your Nursing Career?</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Advance Your Nursing Career?
+            </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Join thousands of nurses who have found their perfect career match through our services.
+              Join thousands of nurses who have found their perfect career match
+              through our services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  size="lg"
+                  className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3"
+                  onClick={() => {
+                    const event = new CustomEvent("openRegistrationModal");
+                    window.dispatchEvent(event);
+                  }}
+                >
                   Get Started Today
                 </Button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 bg-transparent"
-                >
-                  Contact Us
-                </Button>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <a href={"/contact"}>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 bg-transparent"
+                  >
+                    Contact Us
+                  </Button>
+                </a>
               </motion.div>
             </div>
           </motion.div>
@@ -240,5 +295,5 @@ export default function ServicesPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
