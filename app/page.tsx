@@ -116,7 +116,7 @@ export default function HomePage() {
                   transition={{ duration: 0.2 }}
                 >
                   <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
-                    5000+
+                    1000+
                   </div>
                   <div className="text-xs sm:text-sm text-blue-200">
                     Nurses Placed
