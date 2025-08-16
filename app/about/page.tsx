@@ -54,27 +54,29 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Chief Executive Officer",
-      image:
-        "https://plus.unsplash.com/premium_photo-1681967053996-4275be0191e7?q=80&w=1193&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      bio: "Former Chief Nursing Officer with 20+ years in healthcare leadership.",
+      name: "Evangline Baskar",
+      role: "Chief Client Executive Officer",
+      image: "/cceo.jpeg",
+      bio: "Dedicated to strengthening client partnerships and driving healthcare success.",
     },
     {
-      name: "Maria Rodriguez",
-      role: "Director of Recruitment",
-      image:
-        "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      bio: "Specialized in ICU and emergency nursing recruitment for over 15 years.",
+      name: "Baskar",
+      role: "Founder",
+      image: "/founder.jpeg",
+      bio: "Founder of Careviza, committed to transforming healthcare recruitment with innovative solutions.",
     },
     {
-      name: "James Chen",
+      name: "Harries Gnana Sundar",
       role: "Client Relations Manager",
-      image:
-        "https://images.unsplash.com/photo-1603807008857-ad66b70431aa?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      bio: "Healthcare administration expert focused on building strong partnerships.",
+      image: "/crm.jpeg",
+      bio: "Client Relations Manager at Careviza, focused on delivering seamless support and lasting partnerships.",
     },
   ];
+
+  const handleRegisterClick = () => {
+    const event = new CustomEvent("openRegistrationModal");
+    window.dispatchEvent(event);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -94,10 +96,11 @@ export default function AboutPage() {
                 About <span className="text-blue-600">CareViza</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                For over 15 years, we've been dedicated to connecting
-                exceptional nurses with outstanding healthcare opportunities.
-                Our mission is to bridge the gap between talented nursing
-                professionals and the facilities that need them most.
+                Careviza is a nurse recruitment company dedicated to connecting
+                skilled nurses with top healthcare facilities. Since our
+                founding just one year ago, we have achieved remarkable success
+                in bridging the gap between talented nursing professionals and
+                the medical institutions that need them most.
               </p>
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -106,6 +109,7 @@ export default function AboutPage() {
                 <Button
                   size="lg"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
+                  onClick={handleRegisterClick}
                 >
                   Join Our Network
                 </Button>
@@ -387,6 +391,7 @@ export default function AboutPage() {
                 <Button
                   size="lg"
                   className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3"
+                  onClick={handleRegisterClick}
                 >
                   Start Your Journey
                 </Button>
@@ -395,13 +400,15 @@ export default function AboutPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 bg-transparent"
-                >
-                  Contact Us
-                </Button>
+                <a href="/contact">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 bg-transparent"
+                  >
+                    Contact Us
+                  </Button>
+                </a>
               </motion.div>
             </div>
           </motion.div>

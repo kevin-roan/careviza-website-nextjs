@@ -148,7 +148,7 @@ export default function Header() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/services", label: "Services" },
-                { href: "/jobs", label: "Jobs" },
+                // { href: "/jobs", label: "Jobs" },
                 { href: "/blogs", label: "Blogs" },
                 { href: "/about", label: "About" },
                 { href: "/contact", label: "Contact" },

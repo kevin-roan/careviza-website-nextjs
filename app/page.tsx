@@ -31,13 +31,13 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
       <WhatsAppWidget />
 
       {/* Hero Section */}
       <section
-        className="pt-16 relative overflow-hidden min-h-screen flex items-center"
+        className="pt-16 relative overflow-hidden min-h-[100vh] flex items-center"
         style={{
           backgroundImage: `linear-gradient(rgba(37, 99, 235, 0.7), rgba(37, 99, 235, 0.7)), url('https://i0.wp.com/affiniks.com/wp-content/uploads/2023/11/attractive-youngLarge.jpg?fit=1624%2C1080&ssl=1')`,
           backgroundSize: "cover",
@@ -46,7 +46,7 @@ export default function HomePage() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -56,7 +56,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-4xl md:text-6xl font-bold text-white leading-tight"
+                className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
               >
                 Find Your Dream
                 <span className="text-blue-400"> Nursing Career</span>
@@ -65,7 +65,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="mt-6 text-xl text-blue-100 leading-relaxed"
+                className="mt-6 text-lg md:text-xl text-blue-100 leading-relaxed"
               >
                 Connect with top healthcare facilities and advance your nursing
                 career. We specialize in matching qualified nurses with their
@@ -84,7 +84,7 @@ export default function HomePage() {
                   <a href="/contact">
                     <Button
                       size="lg"
-                      className="bg-white hover:bg-blue-50 text-blue-600 px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+                      className="bg-white hover:bg-blue-50 text-blue-600 px-6 md:px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 font-semibold w-full sm:w-auto"
                     >
                       Contact Us Now
                     </Button>
@@ -98,7 +98,7 @@ export default function HomePage() {
                     size="lg"
                     variant="outline"
                     onClick={handleRegisterClick}
-                    className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 bg-transparent transition-all duration-300 font-semibold"
+                    className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 md:px-8 py-3 bg-transparent transition-all duration-300 font-semibold w-full sm:w-auto"
                   >
                     Register Now
                   </Button>
@@ -115,7 +115,7 @@ export default function HomePage() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="text-2xl sm:text-3xl font-bold text-white">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
                     5000+
                   </div>
                   <div className="text-xs sm:text-sm text-blue-200">
@@ -127,7 +127,7 @@ export default function HomePage() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="text-2xl sm:text-3xl font-bold text-white">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
                     200+
                   </div>
                   <div className="text-xs sm:text-sm text-blue-200">
@@ -139,7 +139,7 @@ export default function HomePage() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="text-2xl sm:text-3xl font-bold text-white">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
                     98%
                   </div>
                   <div className="text-xs sm:text-sm text-blue-200">
@@ -230,6 +230,156 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Services Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Complete Healthcare Solutions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From documentation to career guidance, we provide end-to-end
+              support for healthcare professionals
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Services Lists */}
+            <div className="space-y-8">
+              {/* Left Column Services */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="space-y-4"
+              >
+                {[
+                  "HRD Attestation",
+                  "MEA Attestation",
+                  "Apostille Attestation",
+                  "Travel Tickets",
+                  "Tour Packages",
+                ].map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 10, scale: 1.02 }}
+                    className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="w-3 h-3 bg-blue-600 rounded-full flex-shrink-0"></div>
+                    <span className="text-lg font-medium text-gray-800">
+                      {service}
+                    </span>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Right Column Services */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="space-y-4"
+              >
+                {[
+                  "Visiting Visa",
+                  "Dataflow",
+                  "Online Coaching Classes for Health Care Staff",
+                  "Prometric Exams",
+                  "Job Guidance for All Professionals",
+                ].map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: (index + 5) * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 10, scale: 1.02 }}
+                    className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="w-3 h-3 bg-blue-600 rounded-full flex-shrink-0"></div>
+                    <span className="text-lg font-medium text-gray-800">
+                      {service}
+                    </span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Healthcare Professional Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <motion.img
+                  src="/healthcare-professional.png"
+                  alt="Healthcare Professional"
+                  className="w-full h-auto object-cover"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
+              </div>
+
+              {/* Floating Elements */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: true }}
+                className="absolute -top-4 -right-4 bg-blue-600 text-white p-4 rounded-full shadow-lg"
+              >
+                <Stethoscope className="h-8 w-8" />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
+                viewport={{ once: true }}
+                className="absolute -bottom-4 -left-4 bg-white text-blue-600 p-4 rounded-full shadow-lg border-2 border-blue-100"
+              >
+                <Award className="h-8 w-8" />
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                size="lg"
+                onClick={handleRegisterClick}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Get Started Today
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 

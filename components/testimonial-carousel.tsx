@@ -10,36 +10,36 @@ import Image from "next/image";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Ananya Sharma",
     role: "ICU Nurse",
-    hospital: "City General Hospital",
+    hospital: "Apollo Hospital",
     image:
-      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1706943262117-b35de4ba50b4?q=80&w=701&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     rating: 5,
     testimonial:
-      "Careviza helped me find my dream job in the ICU. The process was seamless and the support team was incredible throughout my journey.",
+      "Careviza made my ICU job search effortless and rewarding. Their dedicated support made the entire experience smooth and successful.",
   },
   {
     id: 2,
-    name: "Michael Chen",
+    name: "Rohan Mehta",
     role: "Emergency Room Nurse",
-    hospital: "Metro Medical Center",
+    hospital: "Fortis Healthcare",
     image:
-      "https://images.unsplash.com/photo-1603807008857-ad66b70431aa?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     rating: 5,
     testimonial:
-      "Thanks to Careviza, I transitioned from a small clinic to a major hospital ER. They matched me perfectly with my skills and preferences.",
+      "Thanks to Careviza's personalized approach, I secured an ideal position in a top-tier ER department aligned with my skills.",
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
+    name: "Priya Iyer",
     role: "Pediatric Nurse",
-    hospital: "Children's Healthcare",
+    hospital: "Narayana Health",
     image:
-      "https://plus.unsplash.com/premium_photo-1681967053996-4275be0191e7?q=80&w=1193&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     rating: 5,
     testimonial:
-      "The personalized approach and career guidance I received was outstanding. I'm now working in pediatrics, exactly where I wanted to be.",
+      "With Careviza’s expert guidance, I transitioned confidently into pediatrics, fulfilling my passion for child healthcare.",
   },
 ];
 
