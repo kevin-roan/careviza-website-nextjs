@@ -1,6 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
-import { Instagram, Heart, MessageCircle, Send, Bookmark } from "lucide-react";
 
 import { useEffect } from "react";
 
@@ -57,15 +55,13 @@ export default function InstagramGrid() {
           </motion.a>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-4">
-          {posts.map((html, i) => (
-            <div
-              key={i}
-              className="card flex-1 min-w-[300px] max-w-[32%] sm:max-w-full bg-white rounded-xl shadow-md overflow-hidden"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          ))}
-        </div>
+        {posts.map((html, i) => (
+          <div
+            key={i}
+            className="card flex-1 min-w-[300px] max-w-[32%] sm:max-w-full bg-white rounded-xl shadow-md overflow-hidden"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        ))}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
