@@ -19,7 +19,7 @@ import { motion } from "framer-motion";
 
 export default function AboutPage() {
   const stats = [
-    { number: "5000+", label: "Nurses Placed", icon: Users },
+    { number: "100+", label: "Nurses Placed", icon: Users },
     { number: "200+", label: "Healthcare Partners", icon: Heart },
     { number: "98%", label: "Success Rate", icon: TrendingUp },
     { number: "15+", label: "Years Experience", icon: Award },
