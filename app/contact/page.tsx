@@ -140,12 +140,18 @@ export default function ContactPage() {
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    action="https://formsubmit.co/middleeastnursevacancy@gmail.com"
+                    method="POST"
+                    className="space-y-6"
+                  >
+                    <input type="hidden" name="_captcha" value="false" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="firstName">First Name</Label>
                         <Input
                           id="firstName"
+                          name="firstName"
                           type="text"
                           placeholder="John"
                           required
@@ -155,52 +161,52 @@ export default function ContactPage() {
                         <Label htmlFor="lastName">Last Name</Label>
                         <Input
                           id="lastName"
+                          name="lastName"
                           type="text"
                           placeholder="Doe"
                           required
                         />
                       </div>
                     </div>
-
                     <div>
                       <Label htmlFor="email">Email Address</Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         placeholder="john.doe@example.com"
                         required
                       />
                     </div>
-
                     <div>
                       <Label htmlFor="phone">Phone Number</Label>
                       <Input
                         id="phone"
+                        name="phone"
                         type="tel"
                         placeholder="+1 (555) 123-4567"
                       />
                     </div>
-
                     <div>
                       <Label htmlFor="subject">Subject</Label>
                       <Input
                         id="subject"
+                        name="subject"
                         type="text"
                         placeholder="How can we help you?"
                         required
                       />
                     </div>
-
                     <div>
                       <Label htmlFor="message">Message</Label>
                       <Textarea
                         id="message"
+                        name="message"
                         placeholder="Tell us about your nursing experience and what type of opportunities you're looking for..."
                         rows={6}
                         required
                       />
                     </div>
-
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
