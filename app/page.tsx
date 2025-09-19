@@ -582,97 +582,85 @@ export default function HomePage() {
             >
               <Card className="border-0 shadow-2xl bg-white">
                 <CardContent className="p-6 sm:p-8">
-                  <form className="space-y-6">
+                  <form
+                    action="https://formsubmit.co/middleeastnursevacancy@gmail.com"
+                    method="POST"
+                    className="space-y-6"
+                  >
+                    <input type="hidden" name="_captcha" value="false" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label
-                          htmlFor="firstName"
-                          className="text-gray-700 font-medium"
-                        >
-                          First Name
-                        </Label>
+                        <Label htmlFor="firstName">First Name</Label>
                         <Input
                           id="firstName"
+                          name="firstName"
                           type="text"
                           placeholder="John"
-                          className="mt-1"
+                          required
                         />
                       </div>
                       <div>
-                        <Label
-                          htmlFor="lastName"
-                          className="text-gray-700 font-medium"
-                        >
-                          Last Name
-                        </Label>
+                        <Label htmlFor="lastName">Last Name</Label>
                         <Input
                           id="lastName"
+                          name="lastName"
                           type="text"
                           placeholder="Doe"
-                          className="mt-1"
+                          required
                         />
                       </div>
                     </div>
                     <div>
-                      <Label
-                        htmlFor="contactEmail"
-                        className="text-gray-700 font-medium"
-                      >
-                        Email
-                      </Label>
+                      <Label htmlFor="email">Email Address</Label>
                       <Input
-                        id="contactEmail"
+                        id="email"
+                        name="email"
                         type="email"
-                        placeholder="john@example.com"
-                        className="mt-1"
+                        placeholder="john.doe@example.com"
+                        required
                       />
                     </div>
                     <div>
-                      <Label
-                        htmlFor="contactPhone"
-                        className="text-gray-700 font-medium"
-                      >
-                        Phone
-                      </Label>
+                      <Label htmlFor="phone">Phone Number</Label>
                       <Input
-                        id="contactPhone"
+                        id="phone"
+                        name="phone"
                         type="tel"
                         placeholder="+1 (555) 123-4567"
-                        className="mt-1"
                       />
                     </div>
                     <div>
-                      <Label
-                        htmlFor="subject"
-                        className="text-gray-700 font-medium"
-                      >
-                        Subject
-                      </Label>
+                      <Label htmlFor="subject">Subject</Label>
                       <Input
                         id="subject"
+                        name="subject"
                         type="text"
                         placeholder="How can we help you?"
-                        className="mt-1"
+                        required
                       />
                     </div>
                     <div>
-                      <Label
-                        htmlFor="message"
-                        className="text-gray-700 font-medium"
-                      >
-                        Message
-                      </Label>
+                      <Label htmlFor="message">Message</Label>
                       <Textarea
                         id="message"
-                        placeholder="Tell us about your nursing career goals..."
-                        rows={4}
-                        className="mt-1"
+                        name="message"
+                        placeholder="Tell us about your nursing experience and what type of opportunities you're looking for..."
+                        rows={6}
+                        required
                       />
                     </div>
-                    <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                      <Send className="h-4 w-4 mr-2" />
-                      Send Message
-                    </Button>
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Button
+                        type="submit"
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white h-12"
+                      >
+                        <Send className="h-5 w-5 mr-2" />
+                        Send Message
+                      </Button>
+                    </motion.div>
                   </form>
                 </CardContent>
               </Card>
