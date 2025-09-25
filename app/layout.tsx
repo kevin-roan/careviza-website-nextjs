@@ -1,24 +1,29 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
-import "./globals.css"
-import RegistrationModal from "@/components/registration-modal"
+import type React from "react";
+import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import "./globals.css";
+import RegistrationModal from "@/components/registration-modal";
 
 export const metadata: Metadata = {
   title: "CareViza - Premier Nurse Recruitment Agency",
-  description: "Connect with top nursing opportunities worldwide. Professional nurse recruitment services.",
+  description:
+    "Connect with top nursing opportunities worldwide. Professional nurse recruitment services.",
   generator: "v0.dev",
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <head>
+        <meta
+          name="facebook-domain-verification"
+          content="7m1cobq9fbnrv2q7zx71yz5wileqsn"
+        />
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
@@ -32,5 +37,5 @@ html {
         <RegistrationModal />
       </body>
     </html>
-  )
+  );
 }
