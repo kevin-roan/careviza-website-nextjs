@@ -96,11 +96,12 @@ export default function AboutPage() {
                 About <span className="text-blue-600">CareViza</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Careviza is a nurse recruitment company dedicated to connecting
-                skilled nurses with top healthcare facilities. Since our
-                founding just one year ago, we have achieved remarkable success
-                in bridging the gap between talented nursing professionals and
-                the medical institutions that need them most.
+                Careviza or <b className="font-medium">ANDREA CAREVIZA LLP</b>{" "}
+                is a nurse recruitment company dedicated to connecting skilled
+                nurses with top healthcare facilities. Since our founding just
+                one year ago, we have achieved remarkable success in bridging
+                the gap between talented nursing professionals and the medical
+                institutions that need them most.
               </p>
               <motion.div
                 whileHover={{ scale: 1.05 }}

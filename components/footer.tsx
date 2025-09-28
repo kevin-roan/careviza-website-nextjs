@@ -29,7 +29,18 @@ export default function Footer() {
               />
               <span className="ml-2 text-xl font-bold">CareViza</span>
             </div>
-            <p className="text-gray-400 mb-4">
+
+            <h3 className="text-lg font-semibold text-white mb-2 tracking-wide">
+              ANDREA CAREVIZA LLP
+            </h3>
+
+            <div className="mb-4">
+              <span className="text-sm text-gray-300 uppercase tracking-wider font-medium">
+                LLP ID: ACR-6225{" "}
+              </span>
+            </div>
+
+            <p className="text-gray-400 mb-4 leading-relaxed">
               Connecting exceptional nurses with outstanding healthcare
               opportunities.
             </p>
@@ -164,7 +175,9 @@ export default function Footer() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
         >
-          <p>&copy; 2025 CareViza. All rights reserved.</p>
+          <p>
+            &copy; 2025 CareViza. All rights reserved by ANDREA CAREVIZA LLP
+          </p>
         </motion.div>
       </div>
     </motion.footer>
